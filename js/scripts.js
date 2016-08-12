@@ -1,9 +1,9 @@
 $(document).ready(function() {
-  $("form#yourname").submit(function(event) {
-    event.preventDefault();
-    var username = $("#username").val();
-    $("#yourname").hide("slow");
-    $("#question1").show("slow");
+  // $("form#yourname").submit(function(event) {
+  //   event.preventDefault();
+  //   var username = $("#username").val();
+  //   $("#yourname").hide("slow");
+  //   $("#question1").show("slow");
 
 
   $("form#question1").submit(function(event) {
@@ -60,7 +60,7 @@ $(document).ready(function() {
       };
 
 
-    //Either answer causes reset back to "what is your name" question. Uncertain of problem. Upon revisiting, even if I bypass the question, after answering one question that puts you on the "back-end" track, the next one takes you back to the name box. Even commenting out everything but the "back-end" questions still produces this problem. It's always the question AFTER the first multiple choice that breaks it, so 3 questions in if you include the name question. ADDENDUM: When we comment out the "front-end" branch, only #question3bcorporateslave breaks it. I have gone through character by character and it looks just like the other questions, to me. Moving #question2b to be physically right after #question1 fixes this problem, mostly. There is a concept with branching and nesting that I am missing, but I'm still not certain what it is. I've put in debuggers all over #question2b, and it looks like they're not even getting read! Which would mean that the question is not even being reached in js, which is odd.//
+    //Either answer causes reset back to "what is your name" question. Uncertain of problem. Upon revisiting, even if I bypass the question, after answering one question that puts you on the "back-end" track, the next one takes you back to the name box. Even commenting out everything but the "back-end" questions still produces this problem. It's always the question AFTER the first multiple choice that breaks it, so 3 questions in if you include the name question. ADDENDUM: When we comment out the "front-end" branch, only #question3bcorporateslave breaks it. I have gone through character by character and it looks just like the other questions, to me. Moving #question2b to be physically right after #question1 fixes this problem, mostly. There is a concept with branching and nesting that I am missing, but I'm still not certain what it is. I've put in debuggers all over #question2b, and it looks like they're not even getting read! Which would mean that the question is not even being reached in js, which is odd. I took out the name field, since I couldn't end up doing anything with it in the end.//
 
   $("form#question3bsticktheman").submit(function(event) {
     event.preventDefault();
@@ -96,5 +96,4 @@ $(document).ready(function() {
 
 
   });
-});
 });
