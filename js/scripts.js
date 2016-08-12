@@ -1,11 +1,12 @@
 $(document).ready(function() {
-  $("form#yourname").submit(function() {
+  $("form#yourname").submit(function(event) {
     event.preventDefault();
     var username = $("#username").val();
     $("#yourname").hide("slow");
     $("#question1").show("slow");
 
-  $("form#question1").submit(function() {
+
+  $("form#question1").submit(function(event) {
     event.preventDefault();
     var answer1 = $("input:radio[name=answer1]:checked").val();
     if (answer1 === "front-end") {
@@ -16,14 +17,14 @@ $(document).ready(function() {
       $("#question2b").show("slow");
     }
 
-  $("form#question2f").submit(function() {
+  $("form#question2f").submit(function(event) {
     event.preventDefault();
     var answer2f = $("input:radio[name=answer2f]:checked").val();
     $("#question2f").hide("slow");
     $("#question3f").show("slow");
   });
 
-  $("form#question3f").submit(function() {
+  $("form#question3f").submit(function(event) {
     event.preventDefault();
     var answer3f = $("input:radio[name=answer3f]:checked").val();
     if (answer3f === "backendforms") {
@@ -37,7 +38,7 @@ $(document).ready(function() {
       $("#design").show("slow");
     };
 
-  $("form#question2b").submit(function() {
+  $("form#question2b").submit(function(event) {
     event.preventDefault();
     var answer2b = $("input:radio[name=answer2b]:checked").val();
     if (answer2b === "workforself") {
@@ -47,8 +48,9 @@ $(document).ready(function() {
       $("#question2b").hide("slow");
       $("#question3b-corporate-slave").show("slow");
     };
+    //Either answer causes reset back to "what is your name" question. Uncertain of problem.//
 
-  $("form#question3bsticktheman").submit(function() {
+  $("form#question3bsticktheman").submit(function(event) {
     event.preventDefault();
     var answer3bsticktheman = $("input:radio[name=answer3bsticktheman]:checked").val();
     if (answer3bsticktheman === "application") {
@@ -59,7 +61,7 @@ $(document).ready(function() {
       $("#csharp").show("slow");
     };
 
-  $("form#question3bcorporateslave").submit(function() {
+  $("form#question3bcorporateslave").submit(function(event) {
     event.preventDefault();
     var answer3bcorporateslave = $("input:radio[name=answer3bcorporateslave]:checked").val();
     if (answer3bcorporateslave === "business-software") {
@@ -71,8 +73,9 @@ $(document).ready(function() {
     } else if (answer3bcorporateslave === "websites") {
       $("#question3bcorporateslave").hide("slow");
       $("#php").show("slow");
+
+      //I just want to stress that the neat looking animation when hitting submit is a complete accident, but it looks nice so I keept it.//
     };
-    console.log(username);
   });
 });
 

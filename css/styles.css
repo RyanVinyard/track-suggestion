@@ -21,3 +21,41 @@
 #question3bcorporateslave {
   display: none;
 }
+
+body {
+  background-image: url("http://silviahartmann.com/background-tile-art/images/grey-repeating-background-5.jpg");
+}
+
+h1 {
+  text-align: center;
+}
+
+p {
+  font-size: 12pt;
+}
+
+h2 {
+  font-weight: bold;
+  font-size: 18pt;
+
+}
+
+h3 {
+  font-size: 14pt;
+  font-family: "helvetica", sans-serif;
+}
+
+.jumbotron {
+  margin: 20px;
+  background-color:rgba(200, 200, 200, 0.8);
+  color: #003300;
+  border-radius: 30px;
+}
+
+form {
+text-align: justify;
+text-align-last: center;
+
+.btn-info {
+  border-radius: 14px;
+}
