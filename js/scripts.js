@@ -13,16 +13,21 @@ $(document).ready(function() {
       $("#question1").hide("slow");
       $("#question2f").show("slow");
     } else if (answer1 === "back-end") {
+
       $("#question1").hide("slow");
       $("#question2b").show("slow");
+
     }
+
+
 
   $("form#question2f").submit(function(event) {
     event.preventDefault();
-    var answer2f = $("input:radio[name=answer2f]:checked").val();
     $("#question2f").hide("slow");
     $("#question3f").show("slow");
-  });
+  })
+
+
 
   $("form#question3f").submit(function(event) {
     event.preventDefault();
@@ -30,6 +35,7 @@ $(document).ready(function() {
     if (answer3f === "backendforms") {
       $("#question3f").hide("slow");
       $("#php").show("slow");
+
     } else if (answer3f === "backendlittle") {
       $("#question3f").hide("slow");
       $("#css").show("slow");
@@ -38,17 +44,23 @@ $(document).ready(function() {
       $("#design").show("slow");
     };
 
-  $("form#question2b").submit(function(event) {
-    event.preventDefault();
-    var answer2b = $("input:radio[name=answer2b]:checked").val();
-    if (answer2b === "workforself") {
-      $("#question2b").hide("slow");
-      $("#question3bsticktheman").show("slow");
-    } else if (answer2b === "workforcompany") {
-      $("#question2b").hide("slow");
-      $("#question3b-corporate-slave").show("slow");
-    };
-    //Either answer causes reset back to "what is your name" question. Uncertain of problem.//
+    $("form#question2b").submit(function(event) {
+      debugger;
+      event.preventDefault();
+      debugger;
+
+      var answer2b = $("input:radio[name=answer2b]:checked").val();
+      debugger;
+      if (answer2b === "workforself") {
+        $("#question2b").hide("slow");
+        $("#question3bsticktheman").show("slow");
+      } else if (answer2b === "workforcompany") {
+        $("#question2b").hide("slow");
+        $("#question3bcorporateslave").show("slow");
+      };
+
+
+    //Either answer causes reset back to "what is your name" question. Uncertain of problem. Upon revisiting, even if I bypass the question, after answering one question that puts you on the "back-end" track, the next one takes you back to the name box. Even commenting out everything but the "back-end" questions still produces this problem. It's always the question AFTER the first multiple choice that breaks it, so 3 questions in if you include the name question. ADDENDUM: When we comment out the "front-end" branch, only #question3bcorporateslave breaks it. I have gone through character by character and it looks just like the other questions, to me. Moving #question2b to be physically right after #question1 fixes this problem, mostly. There is a concept with branching and nesting that I am missing, but I'm still not certain what it is. I've put in debuggers all over #question2b, and it looks like they're not even getting read! Which would mean that the question is not even being reached in js, which is odd.//
 
   $("form#question3bsticktheman").submit(function(event) {
     event.preventDefault();
@@ -74,9 +86,9 @@ $(document).ready(function() {
       $("#question3bcorporateslave").hide("slow");
       $("#php").show("slow");
 
-      //I just want to stress that the neat looking animation when hitting submit is a complete accident, but it looks nice so I keept it.//
+      //I just want to stress that the neat looking animation when hitting submit is a complete accident, but it looks nice so I kept it.//
     };
-  });
+  })
 });
 
   });

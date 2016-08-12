@@ -22,6 +22,30 @@
   display: none;
 }
 
+#php {
+  display: none;
+}
+
+#design {
+  display: none;
+}
+
+#ruby {
+  display: none;
+}
+
+#csharp {
+  display: none;
+}
+
+#css {
+  display: none;
+}
+
+#java {
+  display: none;
+}
+
 body {
   background-image: url("http://silviahartmann.com/background-tile-art/images/grey-repeating-background-5.jpg");
 }
@@ -52,10 +76,16 @@ h3 {
   border-radius: 30px;
 }
 
+.btn-info {
+  border-radius: 14px;
+}
+
 form {
 text-align: justify;
 text-align-last: center;
+}
 
-.btn-info {
-  border-radius: 14px;
+img {
+  display: block;
+  margin: auto;
 }
